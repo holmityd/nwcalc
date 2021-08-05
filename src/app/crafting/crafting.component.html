@@ -1,0 +1,47 @@
+<div class="window">
+  <div class="header">
+    <button class="close" (click)="close()">❮  Back</button>
+    <h3>Crafting</h3>
+  </div>
+  <div class="window-wrapper">
+
+    <!-- ITEM -->
+    <div class="output-item color-rarity-{{choosedItem.rarity}}">
+      <div class="item-image item-bg-{{choosedItem.rarity}}">
+        <img [src]="'https://cdn.nwdb.info/db/v2/icons/items/'+choosedItem.itemType.toLowerCase()+'/'+choosedItem.icon.toLowerCase()+'.png'" alt="{{choosedItem.name}}">
+      </div>
+      <div class="info">
+        <span class="title">{{choosedItem.name}}</span>
+        <span class="description">{{choosedItem.description}}</span>
+        <span class="gs">Min GS <b>{{getGsMinBonus()}}</b>, Max GS <b>{{getGsMaxBonus()}}</b></span>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- INGREDIENTS -->
+    <div class="ingredients scrollbar">
+
+      <div *ngFor="let item of choosedItem.ingredients;let index=index"
+        [class]="item.type=='category'?'category':'without-category'" (click)="chooseIngredient(item, index)">
+        <div class="item color-rarity-{{choosedIngredients[index].rarity}}">
+          <div class="item-image item-bg-{{choosedIngredients[index].rarity}}">
+            <img [src]="'https://cdn.nwdb.info/db/v1/icons/items/'+choosedIngredients[index].itemType.toLowerCase()+'/'+choosedIngredients[index].icon.toLowerCase()+'.png'" alt="{{choosedIngredients[index].name}}">
+          </div>
+          <div class="title">
+            <span *ngIf="item.type=='category'">{{item.name}}</span>
+            <span><b>{{choosedIngredients[index].quantity}}</b> {{choosedIngredients[index].name}}</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <button class="calc" (click)="calcIngredients=choosedIngredients">
+    CALC
+  </button>
+</div>
+<app-ingredients *ngIf="ingredientCategory" [category]="ingredientCategory" [index]="ingredientCategoryIndex"
+  (onClose)="ingredientCategory=null" (onChoose)="onChooseIngredient($event)">
+</app-ingredients>
+<app-calc *ngIf="calcIngredients" [ingredients]="calcIngredients" (onClose)="calcIngredients=null"></app-calc>

@@ -1,0 +1,27 @@
+<div class="window">
+  <div class="header">
+    <button class="close" (click)="close()">❮  Back</button>
+    <h3>{{category.name}}</h3>
+  </div>
+
+  <div class="window-wrapper">
+    <div class="ingredients scrollbar">
+
+      <div *ngFor="let item of category.subIngredients" class="item color-rarity-{{item.rarity}}"
+        (click)="chooseIngredient(item,index)">
+        <div class="item-image item-bg-{{item.rarity}}">
+          <img [src]="'https://cdn.nwdb.info/db/v2/icons/items/'+item.itemType.toLowerCase()+'/'+item.icon.toLowerCase()+'.png'" alt="{{item.name}}">
+        </div>
+        <div class="title">
+          <span><b>{{item.quantity}}</b> {{item.name}}</span>
+          <span class="gs" *ngIf="item.gsMinBonus || item.gsMaxBonus">
+            <span *ngIf="item.gsMinBonus" class="gs" [class.red]="0>item.gsMinBonus" [class.green]="item.gsMinBonus>0">{{item.gsMinBonus}} min GS</span>
+          {{item.gsMinBonus && item.gsMaxBonus?',':''}}
+          <span *ngIf="item.gsMaxBonus" class="gs" [class.red]="0>item.gsMinBonus" [class.green]="item.gsMaxBonus>0">{{item.gsMaxBonus}} max GS</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

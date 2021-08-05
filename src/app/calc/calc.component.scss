@@ -1,0 +1,47 @@
+.item {
+  display: flex;
+  padding: 5px 20px;
+  .item-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    img {
+      width: 80%;
+      height: 80%;
+    }
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span {
+      b {
+        margin-right: 6px;
+      }
+    }
+  }
+}
+.window-wrapper {
+  overflow: hidden;
+  &:hover {
+    cursor: move;
+  }
+}
+.stages {
+  display: flex;
+  padding: 15px 0;
+  .stage {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,116 @@
+.window-wrapper {
+  height: calc(100% - 160px);
+}
+
+.output-item {
+  display: flex;
+  padding: 20px;
+  .item-image {
+    margin-right: 20px;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    span {
+      &.title {
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+      &.description {
+      }
+      &.gs {
+      }
+      b {
+        margin-right: 6px;
+      }
+    }
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #2a292a;
+  margin: 0 20px;
+}
+.ingredients {
+  padding: 20px;
+  height: calc(100% - 173px);
+  .category {
+    border: 1px solid #726d57;
+    background-color: #312b1f;
+    position: relative;
+    &:before {
+      content: '❯';
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      color: #726d57;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .without-category {
+  }
+  .category,
+  .without-category {
+    margin-bottom: 10px;
+  }
+  .item {
+    display: flex;
+    padding: 5px 20px;
+    .item-image {
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      img {
+        width: 80%;
+        height: 80%;
+      }
+    }
+    .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      span {
+        b {
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+}
+
+button.calc {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 80px;
+  border: 0;
+  border: 2px solid #2980b9;
+  color: #fff;
+  font-size: 24px;
+  background: transparent;
+  &:before {
+    content: '';
+    box-shadow: inset 0 0 30px #009aff;
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    z-index: -1;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

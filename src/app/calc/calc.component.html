@@ -1,0 +1,22 @@
+<div class="window">
+  <div class="header">
+    <button class="close" (click)="close()">❮  Back</button>
+    <h3>CALC</h3>
+  </div>
+
+  <div #viewport class="window-wrapper">
+    <div #content class="stages">
+      <div class="stage" *ngFor="let stage of stages">
+        <div *ngFor="let item of stage" class="item color-rarity-{{item.rarity}}">
+          <div class="item-image item-bg-{{item.rarity}}">
+            <img *ngIf="item.icon && item.itemType" [src]="'https://cdn.nwdb.info/db/v2/icons/items/'+item.itemType.toLowerCase()+'/'+item.icon.toLowerCase()+'.png'" alt="{{item.name}}">
+          </div>
+          <div class="title">
+            <span><b>{{item.quantity}}</b> {{item.name}}</span>
+          </div>
+        </div>
+        <!-- <hr> -->
+      </div>
+    </div>
+  </div>
+</div>
