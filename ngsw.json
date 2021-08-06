@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1628247559605,
+  "timestamp": 1628247708965,
   "index": "/nwcalc/index.html",
   "assetGroups": [
     {
@@ -42,7 +42,7 @@
     "/nwcalc/assets/icons/android-chrome-512x512.png": "4995d6a47e1c7173fabd3e6f8b79d42d110fbb68",
     "/nwcalc/assets/icons/apple-touch-icon.png": "519d918d5c15bd13d149ae6583072b7ceb826580",
     "/nwcalc/favicon.ico": "82d5de53a7f0f99618b34ee6a72bcdf923ec07c3",
-    "/nwcalc/index.html": "6dbd59f28bfdf6b2d483ebe0ef47d1ec3fce8db0",
+    "/nwcalc/index.html": "c7a6a834a35b8589e3170f3abeeb61eab81b6a6c",
     "/nwcalc/main.64dc6aa78c2795cb5feb.js": "54099ad49342364d75e063f82dc92f679ed96abc",
     "/nwcalc/manifest.webmanifest": "27e774bc2b03565dba1091949532e421241faf7d",
     "/nwcalc/polyfills.3994dd421f8399f666ac.js": "c66c9dbd5446507d1e92b3a43b883090c59cf323",
