@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./crafting.component.scss']
 })
 export class CraftingComponent implements OnInit {
-  constructor() {}
+  constructor() { }
   ingredients: any;
   choosedIngredients = [];
   calcIngredients: any;
@@ -30,10 +30,6 @@ export class CraftingComponent implements OnInit {
     this.ingredientCategory = null;
   }
 
-  // calc() {
-  //   console.log(JSON.stringify(this.choosedIngredients));
-  // }
-
   getGsMaxBonus() {
     let score = 0;
     this.choosedIngredients.forEach(item => {
@@ -50,7 +46,7 @@ export class CraftingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.choosedItem.ingredients.forEach(item => {
+    this.choosedItem.ingredients.forEach((item: any) => {
       if (item.type == 'category')
         this.choosedIngredients.push(item.subIngredients[0]);
       else this.choosedIngredients.push(item);

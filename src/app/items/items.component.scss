@@ -1,56 +1,71 @@
 .window-wrapper {
-  margin-top: 20px;
-  height: calc(100% - 120px);
+  margin-top: 10px;
+  height: calc(100% - 150px);
 }
+
+input,
 select {
-  margin-top: 60px;
-  width: 100%;
   background-color: transparent;
   color: #fff;
   height: 40px;
   font-size: 18px;
-  padding: 0 20px;
-  border: 1px solid #2a292a;
+  border: 1px solid var(--color-background-fourth);
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: 300;
+  border-radius: var(--border-radius);
+}
+
+select {
+  margin-top: 50px;
+  padding: 0 7px;
+
   &:hover {
     cursor: pointer;
   }
+
   option {
     background-color: var(--color-background-secondary);
   }
 }
+
+input {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
 .items {
-  padding: 15px 0;
+  padding: 5px 0;
 
   .item {
     display: flex;
-    padding: 5px 20px;
+    padding: 5px 10px;
+
     &:hover {
       cursor: pointer;
-      background-color: #2d2d2d;
+      background-color: var(--color-background-fourth);
     }
+
     .item-image {
-      width: 50px;
-      height: 50px;
-      margin-right: 20px;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+
       img {
         width: 80%;
         height: 80%;
       }
     }
+
     .title {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      font-size: 16px;
     }
   }
-}
-
-p.info {
-  padding: 0 20px;
-  margin: 0;
-  color: #8e8e8e;
 }

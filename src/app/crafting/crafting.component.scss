@@ -1,26 +1,36 @@
 .window-wrapper {
-  height: calc(100% - 160px);
+  height: calc(100% - 110px);
 }
 
 .output-item {
   display: flex;
-  padding: 20px;
+  padding: var(--padding-size);
+
   .item-image {
-    margin-right: 20px;
+    margin-right: var(--padding-size);
+    width: 80px;
+    height: 80px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
+
   .info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     span {
       &.title {
-        font-size: 20px;
-        text-transform: uppercase;
+        font-size: 18px;
       }
-      &.description {
-      }
-      &.gs {
-      }
+
+      &.description {}
+
+      &.gs {}
+
       b {
         margin-right: 6px;
       }
@@ -31,54 +41,64 @@
 hr {
   border: 0;
   border-top: 1px solid #2a292a;
-  margin: 0 20px;
+  margin: 0 var(--padding-size);
 }
+
 .ingredients {
-  padding: 20px;
-  height: calc(100% - 173px);
+  padding: var(--padding-size);
+  height: calc(100% - 103px);
+
   .category {
     border: 1px solid #726d57;
     background-color: #312b1f;
     position: relative;
+
     &:before {
       content: '❯';
       position: absolute;
       top: 50%;
-      right: 20px;
+      right: var(--padding-size);
       transform: translateY(-50%);
       color: #726d57;
     }
+
     &:hover {
       cursor: pointer;
     }
   }
-  .without-category {
-  }
+
+  .without-category {}
+
   .category,
   .without-category {
     margin-bottom: 10px;
   }
+
   .item {
     display: flex;
-    padding: 5px 20px;
+    padding: 5px var(--padding-size);
+
     .item-image {
-      width: 50px;
-      height: 50px;
-      margin-right: 20px;
+      width: 40px;
+      height: 40px;
+      margin-right: var(--padding-size);
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+
       img {
         width: 80%;
         height: 80%;
       }
     }
+
     .title {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       span {
         b {
           margin-right: 6px;
@@ -90,26 +110,16 @@ hr {
 
 button.calc {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: calc(100% - 40px);
-  height: 80px;
-  border: 0;
-  border: 2px solid #2980b9;
+  bottom: var(--padding-size);
+  left: var(--padding-size);
+  width: calc(100% - var(--padding-size)*2);
+  height: 50px;
   color: #fff;
   font-size: 24px;
-  background: transparent;
-  &:before {
-    content: '';
-    box-shadow: inset 0 0 30px #009aff;
-    display: block;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: calc(100% - 6px);
-    height: calc(100% - 6px);
-    z-index: -1;
-  }
+  background: rgb(0 135 255);
+  border: 0;
+  border-radius: 2px;
+
   &:hover {
     cursor: pointer;
   }

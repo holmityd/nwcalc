@@ -1,16 +1,18 @@
 <div class="window">
   <div class="header">
-    <h3>MAIN</h3>
+    <h3>Items</h3>
   </div>
 
-  <select #categorySelect (change)="changeCategory(categorySelect.value)">
-  <option disabled selected value> Select category </option>
+  <select #categorySelect (change)="filterCategory(categorySelect.value)">
+  <option disabled selected value>Category</option>
     <option *ngFor="let item of categories">{{item}}</option>
   </select>
 
+  <input placeholder="Item" (input)="filterName($event.target.value)" type="text">
+
   <div class="window-wrapper">
-    <div *ngIf="categoryName" class="items scrollbar">
-      <div *ngFor="let item of items | categoryFilter:categoryName" class="item color-rarity-{{item.rarity}}"
+    <div class="items scrollbar">
+      <div *ngFor="let item of items | itemFilter:filterArgs" class="item color-rarity-{{item.rarity}}"
         (click)="chooseItem(item)">
         <div class="item-image item-bg-{{item.rarity}}">
           <img [src]="'https://cdn.nwdb.info/db/v2/icons/items/'+item.itemType.toLowerCase()+'/'+item.icon.toLowerCase()+'.png'" alt="{{item.name}}">

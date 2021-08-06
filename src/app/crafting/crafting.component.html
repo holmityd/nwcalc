@@ -1,6 +1,6 @@
 <div class="window">
   <div class="header">
-    <button class="close" (click)="close()">❮  Back</button>
+    <button class="close" (click)="close()">❮</button>
     <h3>Crafting</h3>
   </div>
   <div class="window-wrapper">
@@ -38,10 +38,10 @@
     </div>
   </div>
   <button class="calc" (click)="calcIngredients=choosedIngredients">
-    CALC
+    Calculate
   </button>
 </div>
 <app-ingredients *ngIf="ingredientCategory" [category]="ingredientCategory" [index]="ingredientCategoryIndex"
   (onClose)="ingredientCategory=null" (onChoose)="onChooseIngredient($event)">
 </app-ingredients>
-<app-calc *ngIf="calcIngredients" [ingredients]="calcIngredients" (onClose)="calcIngredients=null"></app-calc>
+<app-calc *ngIf="calcIngredients" [choosedItem]="choosedItem" [ingredients]="calcIngredients" (onClose)="calcIngredients=null"></app-calc>

@@ -22,7 +22,7 @@ export class IngredientsComponent implements OnInit {
     });
   }
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

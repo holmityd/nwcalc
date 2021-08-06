@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import data from '../data/data.json';
+import data from 'data/data.json';
 
 @Component({
   selector: 'app-items',
@@ -8,20 +8,34 @@ import data from '../data/data.json';
 })
 export class ItemsComponent implements OnInit {
   items: any[] = data;
-  categories: string[] = [];
-  categoryName: string;
-  choosedItem: any;
+  constructor() { }
 
-  changeCategory(item: string) {
-    this.categoryName = item;
+  // Filter
+  filterArgs = {
+    category: '',
+    name: ''
+  }
+  filterCategory(item: string): void {
+    this.filterArgs = {
+      category: item,
+      name: this.filterArgs.name
+    }
+  }
+  filterName(item: string): void {
+    this.filterArgs = {
+      category: this.filterArgs.category,
+      name: item
+    }
   }
 
-  chooseItem(item: any) {
+  // Item
+  choosedItem: any;
+  chooseItem(item: any): void {
     this.choosedItem = item;
   }
 
-  constructor() {}
-
+  // Categories
+  categories: string[] = [];
   ngOnInit() {
     this.items.forEach(item => {
       if (this.categories.indexOf(item.category) == -1)

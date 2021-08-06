@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import refining from '../data/refining.json';
-import resources from '../data/resources.json';
+import refining from 'data/refining.json';
+import resources from 'data/resources.json';
 import ScrollBooster from 'scrollbooster';
 
 @Component({
@@ -9,23 +9,27 @@ import ScrollBooster from 'scrollbooster';
   styleUrls: ['./calc.component.scss']
 })
 export class CalcComponent implements OnInit {
-  @Input() ingredients: any;
-  @Output() onClose = new EventEmitter<boolean>();
+  @Input() choosedItem: any;
+  @Input() ingredients: any[];
+
+  // Data
   refining: any[] = refining;
   resources: any[] = resources;
   data: any[];
-
-  close() {
-    this.onClose.emit(true);
-  }
-
   constructor() {
     this.data = this.refining.concat(this.resources);
   }
 
-  recursiveBlock = 0;
+  // Close
+  @Output() onClose = new EventEmitter<boolean>();
+  close() {
+    this.onClose.emit(true);
+  }
+
+  // Calc
   stages = [];
-  recursiveSearch(arr: any[]) {
+  private recursiveBlock = 0;
+  private invertIngredients(arr: any[]) {
     this.recursiveBlock++;
     if (this.recursiveBlock > 100) return;
     let currentStage = [];
@@ -33,7 +37,7 @@ export class CalcComponent implements OnInit {
     arr.forEach(ingredient => {
       let item = this.data.filter(item => item.id == ingredient.id).pop();
       if (item ?.ingredients) {
-        item ?.ingredients.forEach(b => {
+        item ?.ingredients.forEach((b: any) => {
           let newIng = Object.assign({}, b);
           if (!newIng.id) {
             newIng = Object.assign({}, this.data.filter(dfe => dfe.id == newIng.subIngredients[0].id).pop());
@@ -64,36 +68,36 @@ export class CalcComponent implements OnInit {
     this.stages.push(currentStage);
     // this.reportLog(currentStage);
     if (willContinue)
-      this.recursiveSearch(currentStage);
+      this.invertIngredients(currentStage);
   }
-
   ngOnInit() {
-    this.stages.push(this.ingredients);
-    this.recursiveSearch(this.ingredients);
+    // this.stages.push(this.ingredients);
+    this.invertIngredients(this.ingredients);
     this.stages = this.stages.slice().reverse();
-    // console.log('FINALOCHKA: ',this.stages);
-    // this.stages.forEach(item=>{
-    //   this.reportLog(item);
-    // });
+    this.stages.forEach(item => this.reportLog(item));
+    // if(this.stages.length>1){
+    //
+    // }
   }
 
+  // ScrollBooster
   @ViewChild('viewport', { read: ElementRef }) viewport!: ElementRef;
   @ViewChild('content', { read: ElementRef }) content!: ElementRef;
   ngAfterViewInit() {
     new ScrollBooster({
       viewport: this.viewport.nativeElement,
       content: this.content.nativeElement,
-      scrollMode: 'transform', // use CSS 'transform' property
-      // direction: 'horizontal', // allow only horizontal scrolling
-      emulateScroll: true, // scroll on wheel events
+      scrollMode: 'transform',
+      emulateScroll: true
     });
   }
 
-  reportLog(item: any) {
-    let texta = '';
-    item.forEach(a => {
-      texta += a.quantity + ' ' + a.name + ', ';
+  // Debug
+  private reportLog(obj: any): void {
+    let text = '';
+    obj.forEach((item: any) => {
+      text += item.quantity + ' ' + item.name + ', ';
     });
-    console.log(texta);
+    console.log(text);
   }
 }
