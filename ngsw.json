@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1628246728667,
-  "index": "/index.html",
+  "timestamp": 1628246857003,
+  "index": "/nwcalc/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/favicon.ico",
-        "/index.html",
-        "/main.64dc6aa78c2795cb5feb.js",
-        "/manifest.webmanifest",
-        "/polyfills.3994dd421f8399f666ac.js",
-        "/runtime.33f4f434be73edd3e01e.js",
-        "/styles.fe2a7e1628364e34bd0e.css"
+        "/nwcalc/favicon.ico",
+        "/nwcalc/index.html",
+        "/nwcalc/main.64dc6aa78c2795cb5feb.js",
+        "/nwcalc/manifest.webmanifest",
+        "/nwcalc/polyfills.3994dd421f8399f666ac.js",
+        "/nwcalc/runtime.33f4f434be73edd3e01e.js",
+        "/nwcalc/styles.fe2a7e1628364e34bd0e.css"
       ],
       "patterns": []
     },
@@ -29,25 +29,25 @@
         "ignoreVary": true
       },
       "urls": [
-        "/assets/icons/android-chrome-192x192.png",
-        "/assets/icons/android-chrome-512x512.png",
-        "/assets/icons/apple-touch-icon.png"
+        "/nwcalc/assets/icons/android-chrome-192x192.png",
+        "/nwcalc/assets/icons/android-chrome-512x512.png",
+        "/nwcalc/assets/icons/apple-touch-icon.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/assets/icons/android-chrome-192x192.png": "6ff0dfca968d59ccaff1fbe8f23ebca9689500f6",
-    "/assets/icons/android-chrome-512x512.png": "4995d6a47e1c7173fabd3e6f8b79d42d110fbb68",
-    "/assets/icons/apple-touch-icon.png": "519d918d5c15bd13d149ae6583072b7ceb826580",
-    "/favicon.ico": "82d5de53a7f0f99618b34ee6a72bcdf923ec07c3",
-    "/index.html": "a0740ebdb94fcc290a5739711c00f916b36dd81e",
-    "/main.64dc6aa78c2795cb5feb.js": "54099ad49342364d75e063f82dc92f679ed96abc",
-    "/manifest.webmanifest": "27e774bc2b03565dba1091949532e421241faf7d",
-    "/polyfills.3994dd421f8399f666ac.js": "c66c9dbd5446507d1e92b3a43b883090c59cf323",
-    "/runtime.33f4f434be73edd3e01e.js": "a9e08da334a51fc51a6b73cff63d778f2240953c",
-    "/styles.fe2a7e1628364e34bd0e.css": "a7fa95137f9477c391c4d728fb80cafa3df7e16e"
+    "/nwcalc/assets/icons/android-chrome-192x192.png": "6ff0dfca968d59ccaff1fbe8f23ebca9689500f6",
+    "/nwcalc/assets/icons/android-chrome-512x512.png": "4995d6a47e1c7173fabd3e6f8b79d42d110fbb68",
+    "/nwcalc/assets/icons/apple-touch-icon.png": "519d918d5c15bd13d149ae6583072b7ceb826580",
+    "/nwcalc/favicon.ico": "82d5de53a7f0f99618b34ee6a72bcdf923ec07c3",
+    "/nwcalc/index.html": "0ab5a7bdc25abe4cb83c6d810654359206f39575",
+    "/nwcalc/main.64dc6aa78c2795cb5feb.js": "54099ad49342364d75e063f82dc92f679ed96abc",
+    "/nwcalc/manifest.webmanifest": "27e774bc2b03565dba1091949532e421241faf7d",
+    "/nwcalc/polyfills.3994dd421f8399f666ac.js": "c66c9dbd5446507d1e92b3a43b883090c59cf323",
+    "/nwcalc/runtime.33f4f434be73edd3e01e.js": "a9e08da334a51fc51a6b73cff63d778f2240953c",
+    "/nwcalc/styles.fe2a7e1628364e34bd0e.css": "a7fa95137f9477c391c4d728fb80cafa3df7e16e"
   },
   "navigationUrls": [
     {
