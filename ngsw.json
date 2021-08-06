@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1628260895205,
+  "timestamp": 1628267081416,
   "index": "/nwcalc/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/nwcalc/favicon.ico",
         "/nwcalc/index.html",
-        "/nwcalc/main.af397a9bc50625cdec78.js",
+        "/nwcalc/main.55b639702b637e530b6a.js",
         "/nwcalc/manifest.webmanifest",
         "/nwcalc/polyfills.3994dd421f8399f666ac.js",
         "/nwcalc/runtime.33f4f434be73edd3e01e.js",
@@ -38,12 +38,12 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/nwcalc/assets/icons/android-chrome-192x192.png": "6ff0dfca968d59ccaff1fbe8f23ebca9689500f6",
-    "/nwcalc/assets/icons/android-chrome-512x512.png": "4995d6a47e1c7173fabd3e6f8b79d42d110fbb68",
-    "/nwcalc/assets/icons/apple-touch-icon.png": "519d918d5c15bd13d149ae6583072b7ceb826580",
-    "/nwcalc/favicon.ico": "82d5de53a7f0f99618b34ee6a72bcdf923ec07c3",
-    "/nwcalc/index.html": "f55a6fe063f11cc89d1a9eb8e8197b787b7c91c3",
-    "/nwcalc/main.af397a9bc50625cdec78.js": "73f2c49e77cdfc8a025cf310884df632b1d76f60",
+    "/nwcalc/assets/icons/android-chrome-192x192.png": "bc7157aeb9db520ef2363268f64ea7e3628b07be",
+    "/nwcalc/assets/icons/android-chrome-512x512.png": "c4e409c259ad5ab15b06c0e4b8c6a2e6d2f8d724",
+    "/nwcalc/assets/icons/apple-touch-icon.png": "1b06ae15f16b6d0208ee0c0fd5f6829e55a3d28d",
+    "/nwcalc/favicon.ico": "c314b72d4faee4b5094acb25c069d1b880dc8c10",
+    "/nwcalc/index.html": "f772501759f3269e546dae25467784d3796fce17",
+    "/nwcalc/main.55b639702b637e530b6a.js": "cb800d9820491150fe223e49369b9365febe07d2",
     "/nwcalc/manifest.webmanifest": "27e774bc2b03565dba1091949532e421241faf7d",
     "/nwcalc/polyfills.3994dd421f8399f666ac.js": "c66c9dbd5446507d1e92b3a43b883090c59cf323",
     "/nwcalc/runtime.33f4f434be73edd3e01e.js": "a9e08da334a51fc51a6b73cff63d778f2240953c",
