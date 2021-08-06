@@ -1,6 +1,6 @@
 {
-  "name": "nwclc",
-  "version": "0.0.0",
+  "name": "nwcalc",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@angular/animations": "^12.1.0",
@@ -11,6 +11,7 @@
     "@angular/platform-browser": "^12.1.0",
     "@angular/platform-browser-dynamic": "^12.1.0",
     "@angular/router": "^12.1.0",
+    "@angular/service-worker": "^12.1.0",
     "express": "^4.17.1",
     "rxjs": "^7.1.0",
     "scrollbooster": "^3.0.2",
@@ -19,8 +20,9 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
-    "build": "ng build --configuration production",
+    "start": "ng serve",
+    "build": "ng build",
+    "deploy": "ng deploy --base-href=/nwcalc/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -31,6 +33,7 @@
     "@angular/compiler-cli": "~12.2.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^1.0.0-rc.2",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",

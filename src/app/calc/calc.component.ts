@@ -70,6 +70,7 @@ export class CalcComponent implements OnInit {
   ngOnInit() {
     this.stages.push(this.ingredients);
     this.recursiveSearch(this.ingredients);
+    this.stages = this.stages.slice().reverse();
     // console.log('FINALOCHKA: ',this.stages);
     // this.stages.forEach(item=>{
     //   this.reportLog(item);
