@@ -1,0 +1,71 @@
+{
+  "configVersion": 1,
+  "timestamp": 1628243281990,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.5bc2d0dfa7b1f5c57aaf.js",
+        "/manifest.webmanifest",
+        "/polyfills.eac7d697b4f6ffb43174.js",
+        "/runtime.5a05807b2a0c268ec401.js",
+        "/styles.fe2a7e1628364e34bd0e.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/android-chrome-192x192.png",
+        "/assets/icons/android-chrome-512x512.png",
+        "/assets/icons/apple-touch-icon.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/icons/android-chrome-192x192.png": "6ff0dfca968d59ccaff1fbe8f23ebca9689500f6",
+    "/assets/icons/android-chrome-512x512.png": "4995d6a47e1c7173fabd3e6f8b79d42d110fbb68",
+    "/assets/icons/apple-touch-icon.png": "519d918d5c15bd13d149ae6583072b7ceb826580",
+    "/favicon.ico": "82d5de53a7f0f99618b34ee6a72bcdf923ec07c3",
+    "/index.html": "d5f2c801ed6068bf0b4ead230a3a7780ecbeaed5",
+    "/main.5bc2d0dfa7b1f5c57aaf.js": "9a29e65108ab40c7e309c105ddf75ce66b215f64",
+    "/manifest.webmanifest": "6ed7637a9bcabc412ad2b57266ccc585c22fc3ff",
+    "/polyfills.eac7d697b4f6ffb43174.js": "df2f0d94cde025871fbc8ec11b30ed17a2f1b088",
+    "/runtime.5a05807b2a0c268ec401.js": "eed51aefbc7a5fb749e16cf4ab4dc143522b42e8",
+    "/styles.fe2a7e1628364e34bd0e.css": "a7fa95137f9477c391c4d728fb80cafa3df7e16e"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
