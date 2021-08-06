@@ -12,10 +12,9 @@
             <img *ngIf="item.icon && item.itemType" [src]="'https://cdn.nwdb.info/db/v2/icons/items/'+item.itemType.toLowerCase()+'/'+item.icon.toLowerCase()+'.png'" alt="{{item.name}}">
           </div>
           <div class="title">
-            <span><b>{{item.quantity}}</b> {{item.name}}</span>
+            <span><b>{{item.quantity*count}}</b> {{item.name}}</span>
           </div>
         </div>
-        <!-- <hr> -->
       </div>
     </div>
   </div>

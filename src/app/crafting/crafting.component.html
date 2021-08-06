@@ -15,6 +15,11 @@
         <span class="description">{{choosedItem.description}}</span>
         <span class="gs">Min GS <b>{{getGsMinBonus()}}</b>, Max GS <b>{{getGsMaxBonus()}}</b></span>
       </div>
+
+      <div class="count">
+        <label for="count">Count</label>
+        <input id="count" [value]="count" class="slider-value" type="number" min="1" max="10000" value="1" (input)="changeCount($event.target.value)">
+      </div>
     </div>
 
     <hr />
@@ -30,7 +35,7 @@
           </div>
           <div class="title">
             <span *ngIf="item.type=='category'">{{item.name}}</span>
-            <span><b>{{choosedIngredients[index].quantity}}</b> {{choosedIngredients[index].name}}</span>
+            <span><b>{{choosedIngredients[index].quantity*count}}</b> {{choosedIngredients[index].name}}</span>
           </div>
         </div>
       </div>
@@ -41,7 +46,7 @@
     Calculate
   </button>
 </div>
-<app-ingredients *ngIf="ingredientCategory" [category]="ingredientCategory" [index]="ingredientCategoryIndex"
+<app-ingredients *ngIf="ingredientCategory" [category]="ingredientCategory" [count]="count" [index]="ingredientCategoryIndex"
   (onClose)="ingredientCategory=null" (onChoose)="onChooseIngredient($event)">
 </app-ingredients>
-<app-calc *ngIf="calcIngredients" [choosedItem]="choosedItem" [ingredients]="calcIngredients" (onClose)="calcIngredients=null"></app-calc>
+<app-calc *ngIf="calcIngredients" [choosedItem]="choosedItem" [count]="count" [ingredients]="calcIngredients" (onClose)="calcIngredients=null"></app-calc>

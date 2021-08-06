@@ -45,6 +45,12 @@ export class CraftingComponent implements OnInit {
     return score;
   }
 
+  // Count
+  count: number = 1;
+  changeCount(item: number) {
+    this.count = item;
+  }
+
   ngOnInit() {
     this.choosedItem.ingredients.forEach((item: any) => {
       if (item.type == 'category')

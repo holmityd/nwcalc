@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class IngredientsComponent implements OnInit {
   @Input() category: any;
   @Input() index: number;
+  @Input() count: number = 1;
   @Output() onClose = new EventEmitter<boolean>();
   @Output() onChoose = new EventEmitter<any>();
 

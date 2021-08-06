@@ -13,7 +13,7 @@
           <img [src]="'https://cdn.nwdb.info/db/v2/icons/items/'+item.itemType.toLowerCase()+'/'+item.icon.toLowerCase()+'.png'" alt="{{item.name}}">
         </div>
         <div class="title">
-          <span><b>{{item.quantity}}</b> {{item.name}}</span>
+          <span><b>{{item.quantity*count}}</b> {{item.name}}</span>
           <span class="gs" *ngIf="item.gsMinBonus || item.gsMaxBonus">
             <span *ngIf="item.gsMinBonus" class="gs" [class.red]="0>item.gsMinBonus" [class.green]="item.gsMinBonus>0">{{item.gsMinBonus}} min GS</span>
           {{item.gsMinBonus && item.gsMaxBonus?',':''}}

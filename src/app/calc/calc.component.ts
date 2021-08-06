@@ -11,6 +11,7 @@ import ScrollBooster from 'scrollbooster';
 export class CalcComponent implements OnInit {
   @Input() choosedItem: any;
   @Input() ingredients: any[];
+  @Input() count: number = 1;
 
   // Data
   refining: any[] = refining;
