@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import refining from 'data/refining.json';
 import resources from 'data/resources.json';
+import jewellery from 'data/jewellery.json';
+import arcana from 'data/arcana.json';
 import ScrollBooster from 'scrollbooster';
 
 @Component({
@@ -16,9 +18,11 @@ export class CalcComponent implements OnInit {
   // Data
   refining: any[] = refining;
   resources: any[] = resources;
+  jewellery: any[] = jewellery.filter(item => item.category == 'Crafting Components');
+  arcana: any[] = arcana.filter(item => item.category == 'Elemental Infusion');
   data: any[];
   constructor() {
-    this.data = this.refining.concat(this.resources);
+    this.data = this.refining.concat(this.resources).concat(this.jewellery).concat(this.arcana);
   }
 
   // Close
@@ -36,9 +40,9 @@ export class CalcComponent implements OnInit {
     let currentStage = [];
     let willContinue = false;
     arr.forEach(ingredient => {
-      let item = this.data.filter(item => item.id == ingredient.id).pop();
+      let item = this.data.filter(item => item.id.toLowerCase() == ingredient.id.toLowerCase()).pop();
       if (item ?.ingredients) {
-        item ?.ingredients.forEach((b: any) => {
+        item.ingredients.forEach((b: any) => {
           let newIng = Object.assign({}, b);
           if (!newIng.id) {
             newIng = Object.assign({}, this.data.filter(dfe => dfe.id == newIng.subIngredients[0].id).pop());
@@ -53,7 +57,7 @@ export class CalcComponent implements OnInit {
           }
         });
       } else {
-        let alreadyHave = currentStage.filter(c => c.id == ingredient.id).pop();
+        let alreadyHave = currentStage.filter(c => c.id.toLowerCase() == ingredient.id.toLowerCase()).pop();
         if (!alreadyHave) {
           currentStage.push(ingredient);
         } else {
@@ -62,7 +66,7 @@ export class CalcComponent implements OnInit {
       }
     });
     currentStage.forEach(ingredient => {
-      if (this.refining.filter(item => item.id == ingredient.id).pop()) {
+      if (this.refining.filter(item => item.id.toLowerCase() == ingredient.id.toLowerCase()).pop()) {
         willContinue = true;
       }
     });
@@ -72,13 +76,10 @@ export class CalcComponent implements OnInit {
       this.invertIngredients(currentStage);
   }
   ngOnInit() {
-    // this.stages.push(this.ingredients);
+    this.stages.push(this.ingredients);
     this.invertIngredients(this.ingredients);
     this.stages = this.stages.slice().reverse();
     this.stages.forEach(item => this.reportLog(item));
-    // if(this.stages.length>1){
-    //
-    // }
   }
 
   // ScrollBooster

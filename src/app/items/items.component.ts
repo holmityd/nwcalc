@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import data from 'data/data.json';
+import jewellery from 'data/jewellery.json';
 import refining from 'data/refining.json';
 
 @Component({
@@ -10,7 +11,7 @@ import refining from 'data/refining.json';
 export class ItemsComponent implements OnInit {
   items: any[];
   constructor() {
-    this.items = data.concat(refining);
+    this.items = data.concat(refining).concat(jewellery);
   }
 
   // Filter
@@ -30,6 +31,21 @@ export class ItemsComponent implements OnInit {
       name: item
     }
   }
+
+  getTier(icon: string): string {
+    if (icon.slice(-2, -1) != 'T') return '';
+    return icon.slice(-2);
+  }
+  // getTier(icon: string): string {
+  //   if (icon.slice(-2, -1) != 'T') return '';
+  //   switch (icon.slice(-1)) {
+  //     case '1': return 'I';
+  //     case '2': return 'II';
+  //     case '3': return 'III';
+  //     case '4': return 'IV';
+  //     case '5': return 'V';
+  //   }
+  // }
 
   // Item
   choosedItem: any;
