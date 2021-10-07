@@ -15,7 +15,7 @@
       <div *ngFor="let item of items | itemFilter:filterArgs" class="item color-rarity-{{item.rarity}}"
         (click)="chooseItem(item)">
         <div class="item-image item-bg-{{item.rarity}}">
-          <img [src]="'https://cdn.nwdb.info/db/v2/icons/items/'+item.itemType.toLowerCase()+'/'+item.icon.toLowerCase()+'.png'" alt="{{item.name}}">
+          <img loading="lazy" [src]="'https://cdn.nwdb.info/db/v2/icons/items/'+item.itemType.toLowerCase()+'/'+item.icon.toLowerCase()+'.png'" alt="{{item.name}}">
         </div>
         <div class="title">
           <span>{{item.name}} {{getTier(item.icon)}}</span>
