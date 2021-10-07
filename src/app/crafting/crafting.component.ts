@@ -52,6 +52,7 @@ export class CraftingComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.choosedItem);
     this.choosedItem.ingredients.forEach((item: any) => {
       if (item.type == 'category')
         this.choosedIngredients.push(item.subIngredients[0]);

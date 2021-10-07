@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef }
 import refining from 'data/refining.json';
 import resources from 'data/resources.json';
 import jewellery from 'data/jewellery.json';
+import furnishing from 'data/furnishing.json';
 import arcana from 'data/arcana.json';
 import ScrollBooster from 'scrollbooster';
 
@@ -19,10 +20,11 @@ export class CalcComponent implements OnInit {
   refining: any[] = refining;
   resources: any[] = resources;
   jewellery: any[] = jewellery.filter(item => item.category == 'Crafting Components');
+  furnishing: any[] = furnishing.filter(item => item.category == 'Crafting Components');
   arcana: any[] = arcana.filter(item => item.category == 'Elemental Infusion');
   data: any[];
   constructor() {
-    this.data = this.refining.concat(this.resources).concat(this.jewellery).concat(this.arcana);
+    this.data = this.refining.concat(this.resources).concat(this.jewellery).concat(this.arcana).concat(this.furnishing);
   }
 
   // Close
