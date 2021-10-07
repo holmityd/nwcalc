@@ -18,7 +18,7 @@
           <img loading="lazy" [src]="'https://cdn.nwdb.info/db/v2/icons/items/'+item.itemType.toLowerCase()+'/'+item.icon.toLowerCase()+'.png'" alt="{{item.name}}">
         </div>
         <div class="title">
-          <span>{{item.name}} {{getTier(item.icon)}}</span>
+          <span class="name">{{item.name}} <span class="tier" *ngIf="item.tier">{{getTierRoman(item.tier)}}</span></span>
         </div>
       </div>
     </perfect-scrollbar>

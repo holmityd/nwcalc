@@ -12,7 +12,11 @@ import refining from 'data/refining.json';
 export class ItemsComponent implements OnInit {
   items: any[];
   constructor() {
-    this.items = data.concat(refining).concat(jewellery).concat(furnishing);
+    this.items = data.concat(refining).concat(jewellery.reverse()).concat(furnishing.reverse());
+    this.items = this.items.map(item => {
+      item.tier = this.getTier(item.icon);
+      return item;
+    });
   }
 
   // Filter
@@ -33,20 +37,20 @@ export class ItemsComponent implements OnInit {
     }
   }
 
-  getTier(icon: string): string {
-    if (icon.slice(-2, -1) != 'T') return '';
-    return icon.slice(-2);
+  getTier(icon: string): number | undefined {
+    if (icon.slice(-2, -1).toLowerCase() != 't') return;
+    return parseInt(icon.slice(-1));
   }
-  // getTier(icon: string): string {
-  //   if (icon.slice(-2, -1) != 'T') return '';
-  //   switch (icon.slice(-1)) {
-  //     case '1': return 'I';
-  //     case '2': return 'II';
-  //     case '3': return 'III';
-  //     case '4': return 'IV';
-  //     case '5': return 'V';
-  //   }
-  // }
+
+  getTierRoman(tier: number) {
+    switch (tier) {
+      case 1: return 'I';
+      case 2: return 'II';
+      case 3: return 'III';
+      case 4: return 'IV';
+      case 5: return 'V';
+    }
+  }
 
   // Item
   choosedItem: any;
