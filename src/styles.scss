@@ -211,3 +211,9 @@ my-app {
   background: linear-gradient(360deg, rgba(var(--rarity-5), 0.5) 0, rgba(0, 0, 0, 0.5) 100%);
   border: 1px solid var(--color-rarity-5);
 }
+
+.ps {
+  .ps__rail-y {
+    background: transparent !important;
+  }
+}

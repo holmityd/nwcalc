@@ -11,7 +11,7 @@
   <input placeholder="Item" (input)="filterName($event.target.value)" type="text">
 
   <div class="window-wrapper">
-    <div class="items scrollbar">
+    <perfect-scrollbar class="items">
       <div *ngFor="let item of items | itemFilter:filterArgs" class="item color-rarity-{{item.rarity}}"
         (click)="chooseItem(item)">
         <div class="item-image item-bg-{{item.rarity}}">
@@ -21,7 +21,7 @@
           <span>{{item.name}} {{getTier(item.icon)}}</span>
         </div>
       </div>
-    </div>
+    </perfect-scrollbar>
   </div>
 </div>
 <app-crafting *ngIf="choosedItem" [item]="choosedItem" (onClose)="choosedItem=null"></app-crafting>
